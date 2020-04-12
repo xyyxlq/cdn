@@ -15,6 +15,14 @@ script: true
 # after_success:
 #   - codecov
 
+# 部署之前，需要执行打tag操作
+# before_deploy:
+#   # Set up git user name and tag this commit
+#   - git config --local user.name "YOUR GIT USER NAME"
+#   - git config --local user.email "YOUR GIT USER EMAIL"
+#   - export TRAVIS_TAG=${TRAVIS_TAG:-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)}
+#   - git tag $TRAVIS_TAG
+
 # 部署
 deploy:
   # 部署到GitHub Release。
@@ -28,6 +36,9 @@ deploy:
   # 避免 Travis CI在部署之前清空生成的APK文件
   skip_cleanup: true
   # 发布时机
-  # on:
+  on:
+    branch:
+      only:
+      - pic-go
     # tags设置为true表示只有在有tag的情况下才部署
     # tags: true
