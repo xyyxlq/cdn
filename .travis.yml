@@ -3,9 +3,10 @@ language: node_js
 node_js:
   - 'stable'
 
-# 构建前要执行的脚本【必须要有，不然不能构建】
-script:
-  - npm version patch
+# 构建前要执行的脚本【必须要有，不然不能构建。这里直接设置为true】
+# 版本号++，然后将版本文件回源到GitHub仓库
+script: true
+  # - npm version patch
   # - npm install codecov -g
   # - npm run build
   # - npm run test
