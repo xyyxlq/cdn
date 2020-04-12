@@ -1,0 +1,31 @@
+# 声明构建语言环境
+language: node_js
+node_js:
+  - 'stable'
+
+# 构建前要执行的脚本
+# script:
+#   - npm install codecov -g
+#   - npm run build
+#   - npm run test
+
+# scripts执行成功后要执行的命令
+# after_success:
+#   - codecov
+
+# 部署
+deploy:
+  # 部署到GitHub Release。
+  # 除此之外，Travis CI还支持发布到fir.im、AWS、Google App Engine等
+  provider: releases
+  # Github token
+  api_key: 
+    secure: ${GITHUB_TOKEN}
+  # 部署文件路径；对于Android就部署生成的 apk 文件
+  # file: "FILE TO UPLOAD"
+  # 避免 Travis CI在部署之前清空生成的APK文件
+  skip_cleanup: true
+  # 发布时机
+  # on:
+    # tags设置为true表示只有在有tag的情况下才部署
+    # tags: true
