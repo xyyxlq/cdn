@@ -3,11 +3,12 @@ language: node_js
 node_js:
   - 'stable'
 
-# 构建前要执行的脚本
-# script:
-#   - npm install codecov -g
-#   - npm run build
-#   - npm run test
+# 构建前要执行的脚本【必须要有，不然不能构建】
+script:
+  - npm version patch
+  # - npm install codecov -g
+  # - npm run build
+  # - npm run test
 
 # scripts执行成功后要执行的命令
 # after_success:
