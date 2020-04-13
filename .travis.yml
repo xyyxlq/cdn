@@ -1,7 +1,4 @@
 # 声明构建语言环境
-language: node_js
-node_js: 'stable'
-
 language: node_js # 升级版本需要依赖 npm
 node_js: stable
 
@@ -19,10 +16,10 @@ before_script:
 - git config --global user.email "travis@kingluo.me"
 
 script:
-- git push -f git@github.com:xyyxlq/cdn.git `npm version patch -m "%s [ci skip]"` # 打 Tag，发布到 Github Release, 使用 [ci skip] 调过 CI， 防止死循环
-- git push -f git@github.com:xyyxlq/cdn.git HEAD:pic-go #将新版本文件推送回 Github
-# - git push -f https://${GITHUB_TOKEN}@github.com/xyyxlq/cdn.git `npm version patch -m "%s [ci skip]"` # 打 Tag，发布到 Github Release, 使用 [ci skip] 调过 CI， 防止死循环
-# - git push -f https://${GITHUB_TOKEN}@github.com/xyyxlq/cdn.git HEAD:pic-go #将新版本文件推送回 Github
+# - git push -f git@github.com:xyyxlq/cdn.git `npm version patch -m "%s [ci skip]"` # 打 Tag，发布到 Github Release, 使用 [ci skip] 调过 CI， 防止死循环
+# - git push -f git@github.com:xyyxlq/cdn.git HEAD:pic-go #将新版本文件推送回 Github
+- git push -f https://$GITHUB_TOKEN@github.com/xyyxlq/cdn.git `npm version patch -m "%s [ci skip]"` # 打 Tag，发布到 Github Release, 使用 [ci skip] 调过 CI， 防止死循环
+- git push -f https://$GITHUB_TOKEN@github.com/xyyxlq/cdn.git HEAD:pic-go #将新版本文件推送回 Github
 
 # # 部署
 # deploy:
