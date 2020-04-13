@@ -1,0 +1,20 @@
+{
+  "name": "cdn",
+  "version": "0.0.3",
+  "description": "123",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xyyxlq/cdn.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xyyxlq/cdn/issues"
+  },
+  "homepage": "https://github.com/xyyxlq/cdn#readme"
+}
