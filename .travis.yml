@@ -26,7 +26,6 @@ script: true
 # 部署
 deploy:
   # 部署到GitHub Release。
-  # 除此之外，Travis CI还支持发布到fir.im、AWS、Google App Engine等
   provider: releases
   # Github token
   api_key: 
@@ -36,6 +35,7 @@ deploy:
   # 避免 Travis CI在部署之前清空生成的APK文件
   skip_cleanup: true
   # 发布时机
+  # 默认发布必须要有设置branch，否则报错：Skipping a deployment with the releases provider because this branch is not permitted: pic-go
   on:
     branch:
       only:
