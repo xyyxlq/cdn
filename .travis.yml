@@ -8,7 +8,8 @@ install: true
 # 只发布 pic-go 分支
 branches:
   only:
-  - pic-go 
+  # - pic-go 
+  - dont-need-to-publish
 
 # 配置 travis git 信息
 before_script:
